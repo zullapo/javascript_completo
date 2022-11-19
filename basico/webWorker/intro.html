@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso Javascript Completo</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <img src="placeholder.png" />
+        <button>inicia</button>
+        <input type="text" name="" />
+    </body>
+
+    <script>
+        let count = 0
+
+        const img = document.querySelector('img')
+        const btn = document.querySelector('button')
+
+        img.addEventListener('click', () => {
+            console.log('contador:', ++count)
+        })
+
+        // btn.addEventListener('click', () => {
+        //     const start = new Date().getTime()
+        //     while (new Date().getTime() - start <= 2000) {
+        //         // espera 2 segundos
+        //     }
+        // })
+
+        const worker = new Worker('worker.js')
+        
+        btn.addEventListener('click', () => {
+            worker.postMessage('mensagem')
+        })
+
+    </script>
+</html>

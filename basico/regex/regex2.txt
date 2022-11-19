@@ -1,0 +1,37 @@
+Regex
+
+Obs.: Testar no https://regexr.com/
+
+Introdução
+
+/g: permite que todas as ocorrências possiveis sejam validadas
+.: valida qualquer caractere exceto quebra de linha
+|: permite validar uma expressão ou outra
+[]: qualquer um dos caracteres no conjunto serão validados
+\: caractere de escape
+
+Quantificadores
+
+{n}: permite testar uma expressão n repetidas vezes
+{n, k}: permite testar uma expressão no intervalo de números entre n e k
+*: valida zero ou mais ocorrências de um mesmo caractere
+?: valida zero ou nenhuma ocorrência de um mesmo caractere
++: valida uma ou mais ocorrências de um mesmo caractere
+
+Classes de caracteres
+
+[a-z]: 
+[A-Z]:
+[a-zA-Z]:
+[1-9]:
+\d:
+\w:
+
+Posições
+
+^:
+$:
+
+Boundaries
+
+/b:

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Introdução a eventos</title>
+		<style>
+            .container, .container2 {
+				background-color: #ccc;
+				padding: 20px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Eventos</h1>
+		<!-- DOM level 0 -->
+		<!-- <button id="btn1" onclick="clicou()">Botão 1</button> -->
+		<div class="container">
+			<button id="btn1">Botão 1</button>
+			<button id="btn2">Botão 2</button>
+			<button id="btn3">Botão 3</button>
+		</div>
+		<h1>Propagação de Eventos</h2>
+		<div class="container2">
+			<button>Botão 1</button>
+			<button>Botão 2</button>
+			<button>Botão 3</button>
+		</div>
+	</body>
+	<script>
+		const btn1 = document.querySelector("#btn1")
+		const btn2 = document.querySelector("#btn2")
+		const btn3 = document.querySelector("#btn3")
+
+		function clicou() {
+			alert("Clicou | DOM Level 0")
+		}
+
+		// btn1.onclick = () => {
+		// 	alert("Clicou | DOM Level 1")
+		// }
+
+		/* Responde a um ou mais eventos */
+		btn1.addEventListener("click", () => {
+			alert("Clicou | DOM Level 3")
+		})
+
+		btn1.addEventListener("click", () => {
+			alert("Outro alert")
+		})
+
+		// btn2.onclick = () => {
+		// 	alert("Clicou | DOM Level 1")
+		// }
+
+		btn2.addEventListener("click", () => {
+			alert("Clicou | DOM Level 3")
+		})
+
+		// btn3.onclick = () => {
+		// 	alert("Clicou | DOM Level 1")
+		// }
+
+		btn3.addEventListener("click", () => {
+			alert("Clicou | DOM Level 3")
+		})
+
+		/*
+        Propagação de eventos
+
+        Abrange dois conceitos:
+
+        Fase de bolha: é a fase padrão, quando um botão é clicado, seu event listener
+        é disparado para que elementos acima de sua hierarquia disparem.
+
+        Fase de captura: ativada quando é passado true como parâmetro opcional para o
+        método addEventListener. Diferente da fase de bolha, segue um fluxo inverso,
+        o event listener dos elementos acima é disparado.
+        */
+
+        document.addEventListener("click", (e) => {
+            console.log("clicou no document")
+            console.log(e.target)
+            console.log(e.currentTarget)
+        })
+
+		const container = document.querySelector(".container")
+
+        container.addEventListener(
+			"click",
+			() => {
+				alert("Fase de captura: container é disparado primeiro")
+			},
+			true
+		)
+
+		const container2 = document.querySelector(".container2")
+
+		/*
+        Objeto event
+
+        Representa o evento do DOM, pode ser utilizado para trazer informações
+        do evento. Ex.: MouseEvent retorna o X e Y da posição clicada.
+        */
+
+		btn3.addEventListener("click", (e) => {
+			console.log(e)
+			e.stopPropagation()
+			alert(`X: ${e.x}, Y: ${e.y}`)
+		})
+
+		// btn3.addEventListener("click", (e) => {
+		// 	alert("Parando propagação do evento.")
+		// 	event.stopPropagation()
+		// 	alert("Não é executado")
+		// })
+
+		const btns = document.querySelectorAll(".container2 button")
+
+		btns.forEach((btn) => {
+			btn.addEventListener("click", (e) => {
+				e.stopPropagation()
+				console.log(e.target)
+			})
+		})
+
+        console.log("this global:", this)
+
+        // container2.addEventListener("click", function (e) {
+		container2.addEventListener("click", (e) => {
+			// e.stopPropagation()
+            console.log("clicou no container")
+            console.log(e.target)
+            console.log(e.currentTarget)
+            // O this não muda quando utilizado em uma arrow function
+            console.log("this na função:", this)
+			if (e.target.nodeName === "BUTTON") {
+				// console.log(e.target)
+			}
+		})
+	</script>
+</html>

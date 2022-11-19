@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Métodos from e of</title>
+	</head>
+	<body>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vero
+			ut odio. Fugiat ab, itaque accusamus accusantium blanditiis non
+			voluptatibus dicta vitae dolorum! Veritatis dicta qui earum aliquid
+			dolores ullam.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vero
+			ut odio. Fugiat ab, itaque accusamus accusantium blanditiis non
+			voluptatibus dicta vitae dolorum! Veritatis dicta qui earum aliquid
+			dolores ullam.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vero
+			ut odio. Fugiat ab, itaque accusamus accusantium blanditiis non
+			voluptatibus dicta vitae dolorum! Veritatis dicta qui earum aliquid
+			dolores ullam.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam vero
+			ut odio. Fugiat ab, itaque accusamus accusantium blanditiis non
+			voluptatibus dicta vitae dolorum! Veritatis dicta qui earum aliquid
+			dolores ullam.
+		</p>
+	</body>
+	<script>
+		let paragrafos = document.querySelectorAll("p")
+
+		/* 
+        Se linha abaixo for comentada, não será possível acessar métodos de array
+        (tirando forEach). Pois o querySelectorAll retorna uma NodeList,
+        e uma NodeList não é uma array JavaScript.
+        */
+		paragrafos = Array.from(paragrafos)
+
+		paragrafos.forEach((paragrafo, indice) => {
+			paragrafo.textContent = `${indice + 1} - ${paragrafo.textContent}`
+		})
+
+		const codigosParagrafos = paragrafos.map((paragrafo, indice) => {
+			let codigoParagrafo = paragrafo.textContent.split(" - ")[0]
+			return codigoParagrafo
+		})
+
+		console.log(codigosParagrafos)
+	</script>
+</html>

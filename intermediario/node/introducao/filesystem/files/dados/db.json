@@ -1,0 +1,5 @@
+[
+    { "id": 1, "nome": "Jose", "email": "jose.daniel@testeti.com" },
+    { "id": 2, "nome": "Pedro", "email": "pe.soares@gmail.com" },
+    { "id": 3, "nome": "Lucas", "email": "lccardoso@gmail.com" }
+]

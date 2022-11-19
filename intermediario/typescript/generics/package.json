@@ -1,0 +1,16 @@
+{
+  "name": "generics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ts-node-dev --respawn src/interfaces.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.2.2"
+  }
+}

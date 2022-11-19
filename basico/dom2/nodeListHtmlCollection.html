@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NodeList x HTMLCollection</title>
+	</head>
+	<body>
+		<ul id="lista-materiais">
+			<li>Caneta</li>
+			<li>Régua</li>
+			<li>Borracha</li>
+			<li>Apontador</li>
+			<li>Grampeador</li>
+		</ul>
+	</body>
+	<script>
+        /*
+        NodeList:
+            - Coleção de nós
+            - Método querySelectorAll retorna uma NodeList estática
+        
+        HtmlCollection:
+            - Coleção de elementos
+            - Dinâmica, e é retornado pelos métodos getElements.
+        */
+		const nodeListItens = document.querySelectorAll("#lista-materiais li")
+		const htmlCollectionItens = document
+			.getElementById("lista-materiais")
+			.getElementsByTagName("li")
+
+		console.log(nodeListItens)
+		console.log(htmlCollectionItens)
+
+		document.querySelector("#lista-materiais").innerHTML += "<li>Notas</li>"
+
+		console.log(nodeListItens)
+		console.log(htmlCollectionItens)
+	</script>
+</html>

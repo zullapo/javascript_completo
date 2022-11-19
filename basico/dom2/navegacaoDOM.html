@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Navegação na árvore DOM</title>
+	</head>
+	<body>
+		<div class="container">
+			<p>Primeiro paragrafo</p>
+			<p id="paragrafo-link">Clique nesse <a href="">link</a>.</p>
+			<p>Segundo paragrafo</p>
+
+			<h2>Lista</h2>
+			<ul>
+				<li>Item 1</li>
+				<li>
+					Item 2
+					<ul>
+						<li>Item 2.a</li>
+						<li>Item 2.b</li>
+                        <li>Item 2.c</li>
+                        <li></li>
+					</ul>
+                </li>
+			</ul>
+        </div>
+    </body>
+    <script>
+        console.log(document.body.parentElement)
+        console.log(document.body.parentNode)
+
+        console.log(document.body.parentElement === document.body.parentNode)
+
+        const html = document.body.parentElement
+
+        // O pai do elemento HTML é um nó do tipo documento.
+        console.log(html.parentElement)
+        console.log(html.parentNode)
+
+        const pParagrafoLink= document.querySelector("#paragrafo-link")
+        
+        console.log(pParagrafoLink.previousSibling)
+        console.log(pParagrafoLink.previousElementSibling)
+
+        console.log(pParagrafoLink.nextSibling)
+        console.log(pParagrafoLink.nextElementSibling)
+
+        const link = document.querySelector("a")
+        const list = document.querySelector("ul ul")
+
+        console.log(link)
+
+        console.log(link.parentElement.childNodes)
+        console.log(link.parentElement.children)
+
+        console.log(link.parentElement.firstChild)
+        console.log(link.parentElement.lastChild)
+        console.log(link.parentElement.lastChild.hasChildNodes())
+
+        console.log(list.firstElementChild)
+        console.log(list.lastElementChild)
+
+    </script>
+</html>

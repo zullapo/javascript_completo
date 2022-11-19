@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Objeto History</title>
+    </head>
+    <body>
+        <h1>History</h1>
+        <button id="btnBack">Voltar</button>
+        <button id="btnForward">Avançar</button>
+        <button id="btnClose">Fechar</button>
+    </body>
+    <script>
+        console.log(opener)
+
+        const btnBack = document.getElementById('btnBack')
+        const btnForward = document.getElementById('btnForward')
+
+        btnBack.addEventListener('click', () => history.back())
+        btnForward.addEventListener('click', () => history.forward())
+        btnClose.addEventListener('click', () => window.close())
+        // history.go(-2)
+        // history.go(2)
+    </script>
+</html>

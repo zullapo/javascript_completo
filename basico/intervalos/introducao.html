@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contador</title>
+    </head>
+    <body>
+        <ul></ul>
+    </body>
+    <script>
+        let n = 0
+        const tempoInicial = Date.now()
+        // setTimeout: é executado uma vez ao carregar página, tem um delay de x ms.
+        setTimeout(() => {
+            console.log('parar timeout')
+        }, 3000)
+        // processamento lento
+        setTimeout(() => {
+            for (let i = 0; i <= 1000; i++) {
+                const li = document.createElement('li')
+                li.textContent = `item ${i}`
+                document.querySelector('ul').appendChild(li)
+            }
+        }, 3000)
+        // setInterval: é executado sempre em um intervalo de x ms.
+        const intervalo = setInterval(() => {
+            console.log('interval n:', n++)
+            if (n > 10) {
+                clearInterval(intervalo)
+                const tempoFinal = Date.now()
+                // O que era pra ser executado em 9000 ms, foi executado em 11000
+                // Pois, a VM do JavaScript é single thread.
+                console.log(tempoFinal - tempoInicial)
+            }
+        }, 1000)
+    </script>
+</html>

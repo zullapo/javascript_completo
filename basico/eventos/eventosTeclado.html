@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Eventos de teclado</title>
+	</head>
+	<body>
+		<textarea id="txtEvento" cols="30" rows="10"></textarea>
+	</body>
+	<script>
+		const txtEvento = document.querySelector("#txtEvento")
+		txtEvento.addEventListener("keyup", function (e) {
+			// this refere ao elemento que vincula o evento
+			console.log("keyup:", this.value)
+		})
+		txtEvento.addEventListener("keydown", function (e) {
+			console.log("keydown:", this.value)
+		})
+		txtEvento.addEventListener("keypress", function (e) {
+			// retorna o valor atualizado
+			console.log("keypress:", this.value)
+		})
+	</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Testes - Calculo de média</title>
+        <script src="spec.js"></script>
+        <script src="media.js"></script>
+    </head>
+    <body></body>
+    <script>
+        assert.describe('Teste de cálculo de média', () => {
+            assert(media(6, 8) == 7, 'media(6, 8) é igual a 7')
+            assert(media('6', 8) == 7, "media('6', 8) é igual a 7")
+            assert(media(6, '8') == 7, "media(6, '8') é igual a 7")
+            assert(media('6', '8') == 7, "media('6', '8') é igual a 7")
+            assert(media(0, 10) == 5, 'media(0, 10) é igual a 5')
+            assert(media(0) == 0, 'media(0) é igual a 0')
+            assert(media() == 0, 'media() é igual a 0')
+        })
+    </script>
+</html>

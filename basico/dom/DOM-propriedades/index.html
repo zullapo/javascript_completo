@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Propriedades</title>
+	</head>
+	<body>
+		<h1 id="title1">titulo</h1>
+		<main class="cmain" id="idmain">
+			<h2>subtitulo</h2>
+			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+		</main>
+		<form action="#">
+			<input
+				type="text"
+				id="txtNome"
+				placeholder="nome"
+				value="José Matias"
+			/><br /><br />
+			<input
+				type="text"
+				id="txtEmail"
+				class="email"
+				placeholder="email"
+				value="jose.matias@gmail.com"
+				readonly
+			/><br /><br />
+			<label for="contrato" id="lblContrato"
+				>Li e aceito o contrato
+				<input type="checkbox" name="contrato" /> </label
+			><br /><br />
+			<textarea id="txtContrato" cols="30" rows="10" readonly>
+                Este contrato...
+            </textarea>
+		</form>
+	</body>
+	<script>
+		const title1 = document.getElementById("title1")
+		const txtNome = document.getElementById("txtNome")
+		const txtEmail = document.getElementById("txtEmail")
+		const txtContrato = document.getElementById("txtContrato")
+
+		console.log(title1.textContent)
+		console.log(txtNome.value)
+		console.log(txtEmail.value)
+
+		// Ambiguidades
+		txtEmail.readOnly = false
+		txtContrato.readOnly = false
+
+		console.log(txtEmail.maxLength)
+		console.log(txtEmail.className)
+
+		console.log(lblContrato.htmlFor)
+	</script>
+</html>

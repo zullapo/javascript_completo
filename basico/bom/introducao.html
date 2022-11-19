@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BOM - Browser Object Model</title>
+    </head>
+    <body>
+        <h1>BOM - Browser Object Model</h1>
+        <a href="history.html">Vá para history.html</a>
+    </body>
+    <script>
+        /*
+        Browser Object Model
+        São objetos que permitem o JavaScript comunicar com o browser (navegador),
+        */
+
+        // Window: objeto que representa a janela do browser.
+        console.log('innerWidth', innerWidth)
+        console.log('innerHeight', innerHeight)
+        console.log('outerWidth', outerWidth)
+        console.log('outerHeight', outerHeight)
+
+        console.log('screenX', screenX)
+        console.log('screenY', screenY)
+
+        // History: objeto que representa o histórico de navegação do usuário.
+        // history.html
+
+        // Location: objeto que contém informações sobre o URL.
+        console.log('URL', location.href)
+        console.log('Hash (#)', location.hash)
+        console.log('Search (?)', location.search)
+        console.log('Protocolo (http://)', location.protocol)
+        console.log('Hostname (nome domínio)', location.hostname)
+
+        // Redireciona para site
+        // location.assign('https://google.com.br')
+        
+        // Atualiza página
+        // location.reload()
+
+        // Navigator: objeto que contém informações sobre o navegador do usuário.
+
+        console.log('Informações do browser', navigator.userAgent)
+        console.log('Sistema operacional', navigator.platform)
+        console.log('OnLine', navigator.onLine)
+        console.log('Cookies', navigator.cookieEnabled)
+        console.log('Plugins', navigator.plugins)
+
+        // Screen: objeto que contém informações sobre a janela do monitor.
+        console.log('Tamanho', screen.width)
+        console.log('Altura', screen.height)
+        console.log('Tamanho disponível', screen.availWidth)
+        console.log('Altura disponível', screen.availHeight)
+    </script>
+</html>

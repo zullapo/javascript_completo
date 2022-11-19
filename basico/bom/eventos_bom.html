@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Eventos BOM</title>
+    </head>
+    <body>
+        <h1>Eventos BOM</h1>
+        <img
+            src="https://images.unsplash.com/photo-1566873465716-1834983be9ff?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format"
+            alt="sunset skyscrapers"
+        />
+    </body>
+    <script>
+        window.addEventListener('load', () => {
+            console.log('DOM e imagem carregada')
+        })
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM carregado')
+        })
+        window.addEventListener('resize', () => {
+            console.log(
+                `resize: innerWidth - ${window.innerWidth}, innerHeight - ${window.innerHeight}`
+            )
+        })
+        window.addEventListener('scroll', () => {
+            console.log(`scroll: scrollX - ${scrollX}, scrollY - ${scrollY}`)
+        })
+        // Browser restringe que alerts sejam mostrados
+        window.addEventListener('unload', () => {
+            debugger
+            window.alert('unload')
+        })
+        window.addEventListener('beforeunload', () => {
+            debugger
+            window.alert('beforeunload')
+        })
+    </script>
+</html>

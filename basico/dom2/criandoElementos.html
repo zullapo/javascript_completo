@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Criando elementos</title>
+        <style>
+            .container2 {
+                background: #cccccc;
+                padding: 15px;
+            }
+
+            .container2 p {
+                border: 1px solid red;
+                padding: 10px;
+                margin: 15px;
+            }
+        </style>
+    </head>
+	<body>
+        <div class="container2">
+            <p>Primeiro parágrafo</p>
+            <p>Segundo parágrafo</p>
+            <p>Terceiro parágrafo</p>
+        </div>
+		<div class="container">
+			<p>Primeiro paragrafo</p>
+			<p id="paragrafo-link">Clique nesse <a href="">link</a>.</p>
+            <ul></ul>
+			<h2 id="titulo-lista">Lista</h2>
+			<ul>
+				<li>Item 1</li>
+				<li>
+					Item 2
+					<ul>
+						<li>Item 2.a</li>
+						<li>Item 2.b</li>
+						<li>Item 2.c</li>
+						<li></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+        // Criando elementos
+		const tituloH1 = document.createElement("h1")
+		const tituloH1Id = document.createAttribute("id")
+		tituloH1Id.value = "title1"
+		tituloH1.setAttributeNode(tituloH1Id)
+
+		tituloH1.setAttribute("id", "title1")
+        
+		const tituloH1Text = document.createTextNode("Título principal")
+		tituloH1.appendChild(tituloH1Text)
+        
+		tituloH1.textContent = "Título"
+        
+        const container = document.querySelector(".container")
+        
+        container.appendChild(tituloH1)
+        
+        // Adicionando/movendo elementos
+
+        const subtituloH2 = document.createElement("h2")
+        subtituloH2.textContent = "Subtítulo"
+
+        container.insertBefore(subtituloH2, document.querySelector("#titulo-lista"))
+        
+        let sublevel = document.querySelector("ul ul")
+        sublevel = sublevel.cloneNode(true)
+
+        console.log(sublevel)
+
+        // after e before
+        const link = document.querySelector("#paragrafo-link")
+
+        const segundoParagrafo = document.createElement("p")
+        segundoParagrafo.textContent = "Segundo parágrafo"
+
+        link.after(segundoParagrafo)
+
+        const paragrafo = document.createElement("p")
+        paragrafo.textContent = "Parágrafo"
+
+        document.querySelector("#titulo-lista").before(paragrafo)
+
+        // insert: beforebegin, afterbegin, beforeend, afterend
+
+        const container2 = document.querySelector(".container2")
+
+        container2.insertAdjacentElement("beforebegin", tituloH1)
+        
+        container2.insertAdjacentHTML("beforebegin", "<b> Antes do começo </b>")
+        container2.insertAdjacentHTML("afterbegin", "<b> Depois do começo </b>")
+        container2.insertAdjacentHTML("beforeend", "<b> Antes do final </b>")
+        container2.insertAdjacentHTML("afterend", "<b> Depois do final </b>")
+
+        // remove
+        sublevel.remove()
+        
+        const parent = document.body
+        const newChild = container.querySelector("p")
+        const oldChild = document.querySelector("h1")
+        parent.replaceChild(newChild, oldChild)
+    </script>
+</html>

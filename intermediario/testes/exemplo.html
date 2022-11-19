@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Testes - Introdução</title>
+        <script src="spec.js"></script>
+    </head>
+    <body></body>
+    <script>
+        assert.describe('Teste Exemplo', () => {
+            assert([] == false, 'Lista vazia é igual a false')
+            assert({} == false, 'Objeto vazio é igual a false')
+            assert(0 == false, 'Zero é igual a false')
+
+            assert([1, 2, 3] == true, 'Lista [1, 2, 3] é igual a true')
+            assert(
+                { a: 1, b: 2, c: 3 } == true,
+                'Objeto {a: 1, b: 2, c: 3} é igual a true'
+            )
+            assert(1 == true, 'Um é igual a true')
+        })
+    </script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AJAX</title>
+    </head>
+    <style>
+        #responseText {
+            width: 500px;
+            height: 80px;
+        }
+    </style>
+    <body>
+        <h1>AJAX: XMLHttpRequest</h1>
+        <textarea id="responseText" cols="30" rows="10"></textarea>
+    </body>
+    <script src="createXMLHttpRequest.js"></script>
+    <script>
+        createXMLHttpRequest('GET', 'dados.json', function (data) {
+            Array.from(data).forEach((d) => {
+                document.querySelector('#responseText').value +=
+                    `Pessoa { nome: ${d.nome}, email: ${d.email} }` + '\n'
+            })
+        })
+    </script>
+</html>

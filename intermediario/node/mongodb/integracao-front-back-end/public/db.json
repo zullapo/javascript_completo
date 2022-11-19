@@ -1,0 +1,180 @@
+{
+  "todos": [
+    {
+      "title": "lust for life",
+      "completed": true,
+      "createdAt": "2022-06-02T17:49:29.286Z",
+      "updatedAt": "2022-06-02T17:49:29.286Z",
+      "userId": "2",
+      "id": 1,
+      "updateAt": 1654202286840
+    },
+    {
+      "title": "houstatlantavegas",
+      "completed": true,
+      "createdAt": "2022-06-02T17:49:52.902Z",
+      "updatedAt": "2022-06-02T17:49:52.902Z",
+      "userId": "2",
+      "id": 2,
+      "updateAt": 1654201247067
+    },
+    {
+      "title": "successful",
+      "completed": true,
+      "createdAt": "2022-06-02T17:50:08.782Z",
+      "updatedAt": "2022-06-02T17:50:08.782Z",
+      "userId": "2",
+      "id": 3,
+      "updateAt": 1654201246241
+    },
+    {
+      "title": "lets call it off",
+      "completed": true,
+      "createdAt": "2022-06-02T17:50:14.694Z",
+      "updatedAt": "2022-06-02T17:50:14.694Z",
+      "userId": "2",
+      "id": 4,
+      "updateAt": 1654201245675
+    },
+    {
+      "title": "november 18th",
+      "completed": true,
+      "createdAt": "2022-06-02T17:50:21.109Z",
+      "updatedAt": "2022-06-02T17:50:21.109Z",
+      "userId": "2",
+      "id": 5,
+      "updateAt": 1654197329303
+    },
+    {
+      "title": "ignant shit",
+      "completed": true,
+      "createdAt": "2022-06-02T17:50:25.397Z",
+      "updatedAt": "2022-06-02T17:50:25.397Z",
+      "userId": "2",
+      "id": 6,
+      "updateAt": 1654197329950
+    },
+    {
+      "title": "a night off",
+      "completed": true,
+      "createdAt": "2022-06-02T17:50:35.933Z",
+      "updatedAt": "2022-06-02T17:50:35.933Z",
+      "userId": "2",
+      "id": 7,
+      "updateAt": 1654197330660
+    },
+    {
+      "title": "say what's real",
+      "completed": true,
+      "createdAt": "2022-06-02T17:50:42.493Z",
+      "updatedAt": "2022-06-02T17:50:42.493Z",
+      "userId": "2",
+      "id": 8,
+      "updateAt": 1654197332172
+    },
+    {
+      "title": "little bit",
+      "completed": true,
+      "createdAt": "2022-06-02T17:51:31.428Z",
+      "updatedAt": "2022-06-02T17:51:31.428Z",
+      "userId": "2",
+      "id": 9,
+      "updateAt": 1654197332789
+    },
+    {
+      "title": "best i ever had",
+      "completed": true,
+      "createdAt": "2022-06-02T17:51:49.771Z",
+      "updatedAt": "2022-06-02T17:51:49.771Z",
+      "userId": "2",
+      "id": 10,
+      "updateAt": 1654197334910
+    },
+    {
+      "title": "unstoppable",
+      "completed": true,
+      "createdAt": "2022-06-02T17:54:46.780Z",
+      "updatedAt": "2022-06-02T17:54:46.780Z",
+      "userId": "2",
+      "id": 11,
+      "updateAt": 1654197336776
+    },
+    {
+      "title": "uptown",
+      "completed": true,
+      "createdAt": "2022-06-02T17:54:49.172Z",
+      "updatedAt": "2022-06-02T17:54:49.172Z",
+      "userId": "2",
+      "id": 12,
+      "updateAt": 1654197337409
+    },
+    {
+      "title": "sooner than later",
+      "completed": true,
+      "createdAt": "2022-06-02T17:54:53.732Z",
+      "updatedAt": "2022-06-02T17:54:53.732Z",
+      "userId": "2",
+      "id": 13,
+      "updateAt": 1654197337841
+    },
+    {
+      "title": "bria's interlude",
+      "completed": true,
+      "createdAt": "2022-06-02T17:54:57.188Z",
+      "updatedAt": "2022-06-02T17:54:57.188Z",
+      "userId": "2",
+      "id": 14,
+      "updateAt": 1654197338319
+    },
+    {
+      "title": "the calm",
+      "completed": true,
+      "createdAt": "2022-06-02T17:55:00.516Z",
+      "updatedAt": "2022-06-02T17:55:00.516Z",
+      "userId": "2",
+      "id": 15,
+      "updateAt": 1654197338867
+    },
+    {
+      "title": "outro",
+      "completed": true,
+      "createdAt": "2022-06-02T17:55:01.668Z",
+      "updatedAt": "2022-06-02T17:55:01.668Z",
+      "userId": "2",
+      "id": 16,
+      "updateAt": 1654197344119
+    },
+    {
+      "title": "brand new",
+      "completed": true,
+      "createdAt": "2022-06-02T17:55:02.916Z",
+      "updatedAt": "2022-06-02T17:55:02.916Z",
+      "userId": "2",
+      "id": 17,
+      "updateAt": 1654197344459
+    },
+    {
+      "title": "congratulations",
+      "completed": true,
+      "createdAt": "2022-06-02T17:55:06.364Z",
+      "updatedAt": "2022-06-02T17:55:06.364Z",
+      "userId": "2",
+      "id": 18,
+      "updateAt": 1654197344921
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "daniel@server.com"
+    },
+    {
+      "id": 2,
+      "email": "maria@server.com"
+    },
+    {
+      "id": 3,
+      "email": "joao@server.com"
+    }
+  ]
+}

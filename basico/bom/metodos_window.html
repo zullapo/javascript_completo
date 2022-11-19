@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Métodos window</title>
+    </head>
+    <body>
+        <button>Redireciona para history.html</button>
+    </body>
+    <script>
+        console.log(opener)
+
+        var teste = 'Variável do documento metodos_window.html'
+
+        window.alert('Seja bem-vindo ao nosso site')
+        document.querySelector('button').addEventListener('click', () => {
+            if (window.confirm('Deseja redirecionar para o history.html')) {
+                window.open(
+                    'history.html',
+                    'nome-janela',
+                    'width=683;height=384'
+                )
+            }
+        })
+    </script>
+</html>

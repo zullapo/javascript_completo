@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Desafio CEP</title>
+    </head>
+    <body>
+        <input type="text" id="cep" />
+    </body>
+    <script>
+        // /g: Fica false depois true
+        // const cepRegex = /\d{5}-\d{3}/g
+        const cepRegex = /\d{5}-\d{3}/
+
+        const cepInput = document.getElementById('cep')
+
+        const isCepValid = (cep) => regex.test(cep)
+
+        const cepInputFocus = (e) => console.log('focus')
+        const cepInputBlur = (e) => {
+            const cep = e.target.value
+            console.log(isCepValid(cep))
+        }
+
+        cepInput.addEventListener('focus', cepInputFocus)
+        cepInput.addEventListener('blur', cepInputBlur)
+    </script>
+</html>

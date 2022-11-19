@@ -1,0 +1,140 @@
+Regex
+
+Obs.: Testar no https://regexr.com/
+
+Introdução
+
+Flag /g: busca global da expressão por todo texto
+Expressão: /123456/g
+Texto: 123456 vou encontrar 123456 em todo texto
+Resultado: ['123456', '123456']
+
+Caractere (.): valida qualquer caractere exceto quebra de linha
+Expressão: /a.c/g
+Texto: abcde
+Resultado: ['abc']
+
+Alternação (|): valida expressão antes e depois do |
+Expressão: /pato|gato/g
+Texto: pato gato sapato gato
+Resultado: ['pato', 'gato', 'pato', 'pato']
+
+Conjunto ([]): valida todos caracteres do conjunto
+Expressão: /[pg]ato/g
+Texto: pato gato sapato gato
+Resultado: ['pato', 'gato', 'pato', 'pato']
+
+Escape (\): escapa caractere para validação
+Expressão: /\.[pg]ato/g
+Texto: .pato .gato sa.pato .gato
+Resultado: ['.pato', '.gato', '.pato', '.gato']
+
+Quantificadores e classes de caracteres
+
+Quantificadores
+
+{n}: valida a expressão n subsequente vezes.
+Expressão: /[1-9]{4}/g
+Texto: 4456
+Resultado: ['4456']
+
+{n, k}: valida a expressão em um número mínimo e máximo de vezes.
+Expressão: /[1-9]{4, 6}/g
+Texto: 1500 240921
+Resultado: ['1500', '2490921']
+
+?: valida um ou nenhum caracter repetido (torna caracter opcional).
+Expressão: /[A-Z]-?[1-9]/g
+Texto: HJKM1090
+Resultado: ['HJKM1090'] 
+
++: valida um ou mais caracteres repetidos.
+Expressão: /A+/g
+Texto: AACC
+Resultado: ['AA']
+
+*: valida zero ou mais caracteres repetidos (torna caracter opcional).
+Expressão: /A*B/g
+Texto: AABC
+Resultado: ['AAB']
+
+### Classes de caracteres
+
+[a-z]: valida caracteres de a até z minúsculos.
+
+[A-Z]: valida caracteres de até z maiúsclos.
+
+[1-9]: valida números de 1 até 9.
+
+\d: valida dígitos ASCII.
+
+\w: valida caracteres ASCII.
+
+## Posições e Boundaries
+
+### Posições
+
+^: valida caracteres no começo do texto
+Expressão: /^[A-Z]{3}-?\d{4}/g
+Texto: ABC-1234
+Resultado: ['ABC-1234']
+Obs.: Se texto tiver mais de uma linha, /m deve ser utilizado junto com /g
+
+($): valida caracteres no final do texto
+Expressão: /^[A]-Z{3}-?\d{4}$/g
+Texto: ABC-1234
+Resultado: ['ABC-1234']
+
+### Boundaries
+
+/b: valida se uma palavra começa/termina com letras
+Expressão: \b\w+ato
+Texto: grato prato sapato
+Resultado: ['grato', 'prato', 'sapato']
+
+Expressão: ato\w+\b
+Texto: atoa ator atomico
+Resultado: ['atoa', 'atoa', 'atomico']
+
+## Expressões Gananciosas e Preguiçosas
+
+### Expressão Gananciosa
+
+Expressões são gananciosas por padrão, o quantificador + irá validar o
+número máximo de dígitos possíveis.
+
+Expressão: <h1.+>
+Texto: <h1 id="id">Teste</h1>
+Resultado: ['<h1 id="id">Teste</h1>']
+
+### Expressão Preguiçosa
+
+Se adicionar um ? ao lado de um +, a expressão se tornará preguiçosa
+e o quantificador irá validar o número menor de caracteres possiveis.
+
+Expressão: <h1.+?>
+Texto: <h1 id="id">Teste</h1>
+Resultado: ['<h1 id="id">']
+
+### Validando tag h1-h6 html
+
+1. Validar tag h1
+
+Expressão: <h1.+?>
+
+2. Validar texto entre a tag
+
+Expressão: <h1.+?>[\s\w]+
+
+3. Validar tag de fechamento da h1
+
+Expressão: <h1.+?>[\s\w]+<\/h1>
+
+3.1 Utilizar grupo de captura (), para que a tag de abertura seja igual a de fechamento
+
+Expressão: <(h[1-6].+?)[\s\w]+<\/\1>
+
+## Negação
+
+^[abc]: não valida elementos do conjunto
+
